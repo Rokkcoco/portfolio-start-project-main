@@ -8,7 +8,7 @@ type Props = {
     description: string
 }
 
-export const Skill = ({iconId, title, description}:Props) => {
+export const Skill = ({iconId, title, description}: Props) => {
     return (
         <StyledSkill>
             <Icon id={iconId}/>
@@ -20,12 +20,12 @@ export const Skill = ({iconId, title, description}:Props) => {
 
 const StyledSkill = styled.div`
     width: 33%;
-    `
+`
 
 const StyledSkillTitle = styled.h3`
-    
-    `
+
+`
 
 const StyledSkillText = styled.p`
-    
-    `
+
+`

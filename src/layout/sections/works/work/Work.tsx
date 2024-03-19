@@ -7,7 +7,7 @@ type Props = {
     src: string
 }
 
-export const Work = ({title, text, src}:Props) => {
+export const Work = ({title, text, src}: Props) => {
     return (
         <StyledWork>
             <Image src={src} alt=''/>
@@ -20,21 +20,25 @@ export const Work = ({title, text, src}:Props) => {
 };
 
 const StyledWork = styled.div`
-background-color: orange;
-    `
+    background-color: orange;
+    max-width: 540px;
+    width: 100%;
+`
 
 const Image = styled.img`
-    
-    `
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+`
 
 const Link = styled.a`
-    
-    `
+
+`
 
 const Title = styled.h3`
-    
-    `
+
+`
 
 const Text = styled.p`
-    
-    `
+
+`

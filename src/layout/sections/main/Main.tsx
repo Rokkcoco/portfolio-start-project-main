@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import photo from '../../../assets/images/photo.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
+
 export const Main = () => {
     return (
         <StyledMain>
@@ -30,9 +31,9 @@ const Photo = styled.img`
 `
 
 const MainTitle = styled.h1`
-    
-    `
+
+`
 
 const Name = styled.h2`
-    
-    `
+
+`
