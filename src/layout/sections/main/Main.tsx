@@ -8,8 +8,9 @@ export const Main = () => {
             <FlexWrapper align={'center'} justify={'space-around'}>
                 <div>
                     <span>Hi There</span>
-                    <h2>I am Devil within</h2>
-                    <h1>A Web Developer.</h1>
+                    <StyledName>I am Devil within</StyledName>
+                    <StyledMainTitle>A Web Developer.</StyledMainTitle>
+                    <span></span>
                 </div>
                 <StyledPhoto src={photo} alt=''/>
             </FlexWrapper>
@@ -27,3 +28,11 @@ const StyledPhoto = styled.img`
     height: 430px;
     object-fit: cover;
 `
+
+const StyledMainTitle = styled.h1`
+    
+    `
+
+const StyledName = styled.h2`
+    
+    `
