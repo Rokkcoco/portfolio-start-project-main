@@ -8,11 +8,11 @@ export const Main = () => {
             <FlexWrapper align={'center'} justify={'space-around'}>
                 <div>
                     <span>Hi There</span>
-                    <StyledName>I am Devil within</StyledName>
-                    <StyledMainTitle>A Web Developer.</StyledMainTitle>
+                    <Name>I am Devil within</Name>
+                    <MainTitle>A Web Developer.</MainTitle>
                     <span></span>
                 </div>
-                <StyledPhoto src={photo} alt=''/>
+                <Photo src={photo} alt=''/>
             </FlexWrapper>
         </StyledMain>
     );
@@ -23,16 +23,16 @@ const StyledMain = styled.div`
     background-color: pink;
 `
 
-const StyledPhoto = styled.img`
+const Photo = styled.img`
     width: 350px;
     height: 430px;
     object-fit: cover;
 `
 
-const StyledMainTitle = styled.h1`
+const MainTitle = styled.h1`
     
     `
 
-const StyledName = styled.h2`
+const Name = styled.h2`
     
     `
