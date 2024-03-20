@@ -1,4 +1,5 @@
 import {createGlobalStyle} from "styled-components";
+import {theme} from "./Theme";
 
 
 export const GlobalStyle = createGlobalStyle`
@@ -15,6 +16,7 @@ export const GlobalStyle = createGlobalStyle`
         sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
+        color: ${theme.colors.font};
     }
     
     a {
@@ -28,5 +30,12 @@ export const GlobalStyle = createGlobalStyle`
     button {
         background-color: unset;
         border: unset;
+    }
+    
+    section:nth-of-type(odd) {
+        background-color: ${theme.colors.primaryBg};
+    }
+    section:nth-of-type(even) {
+        background-color: ${theme.colors.secondaryBg};
     }
 `
