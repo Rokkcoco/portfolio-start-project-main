@@ -53,7 +53,7 @@ const Field = styled.input`
     color: ${theme.colors.font};
     
     &::placeholder {
-        color: ${theme.colors.placeholder};
+        color: ${theme.colors.placeholderColor};
         text-transform: capitalize;
     }
     
