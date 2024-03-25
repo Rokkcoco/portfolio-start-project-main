@@ -4,12 +4,13 @@ import photo from '../../../assets/images/photo.webp'
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
+import {font} from "../../../styles/Common";
 
 export const Main = () => {
     return (
         <StyledMain>
             <Container>
-                <FlexWrapper align={'center'} justify={'space-between'}>
+                <FlexWrapper align={'center'} justify={'space-around'} wrap={'wrap'}>
                     <div>
                         <SmallText>Hi There</SmallText>
                         <Name>I am <span>Devil within</span></Name>
@@ -35,23 +36,27 @@ const Photo = styled.img`
     width: 350px;
     height: 430px;
     object-fit: cover;
+    margin-right: 20px;
+    
+    @media ${theme.media.mobile} {
+        width: 310px;
+        height: 380px;
+    }
 `
 
 const MainTitle = styled.h1`
-    font-size: 27px;
-    font-weight: 400;
+    ${font({weight: 400, fMax: 27, fMin: 20})}
 `
 
 const Name = styled.h2`
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 50px;
-    font-weight: 700;
+    ${font({family: "'Josefin Sans', sans-serif", weight: 700, fMax: 50, fMin: 36})}
     letter-spacing: 0.05em;
     margin: 10px 0;
-        
+    
     span {
         position: relative;
         z-index: 0;
+        white-space: nowrap;
         &::before {
             z-index: -1;
             position: absolute;
@@ -63,6 +68,10 @@ const Name = styled.h2`
             background-color: ${theme.colors.accent};
         }
     }
+    
+    @media ${theme.media.mobile} {
+        margin: 15px 0 22px;
+    }
 `
 
 const SmallText = styled.h2`
@@ -73,6 +82,7 @@ const SmallText = styled.h2`
 const PhotoWrapper = styled.div`
     position: relative;
     z-index: 0;
+    margin-top: 65px;
     &::before {
         z-index: -1;
         content: '';
@@ -82,5 +92,12 @@ const PhotoWrapper = styled.div`
         width: 360px;
         height: 470px;
         border: 5px solid ${theme.colors.accent};
+
+        @media ${theme.media.mobile} {
+            width: 314px;
+            height: 414px;
+            top: -17px;
+            left: 20px;
+        }
     }
 `

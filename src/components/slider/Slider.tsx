@@ -47,7 +47,7 @@ const Name = styled.span`
     font-weight: 600;
     letter-spacing: 1px;
     text-transform: uppercase;
-    margin: 22px 0 42px;
+    margin: 15px 0 35px;
     display: inline-block; /*меняем дисплей чтобы можно было задать нужные маржины, тк изначально элемент строчный и верхний нижний маржин не работает*/
 `
 
