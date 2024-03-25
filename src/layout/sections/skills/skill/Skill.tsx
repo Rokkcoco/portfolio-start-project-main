@@ -36,7 +36,8 @@ const StyledSkillTitle = styled.h3`
 const StyledSkillText = styled.p`
     text-align: center;
 `
-const IconWrapper = styled.div`
+
+export const IconWrapper = styled.div`
     position: relative;
 
     &::before {

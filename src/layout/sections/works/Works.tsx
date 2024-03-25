@@ -16,7 +16,7 @@ export const Works = () => {
             <Container>
                 <SectionTitle>My Works</SectionTitle>
                 <TabMenu menuItems={worksItems}/>
-                <FlexWrapper justify={'space-between'} align={'flex-start'}>
+                <FlexWrapper justify={'space-between'} align={'flex-start'}> {/*flex-start чтобы убрать растягивание обоих элементов*/}
                     <Work title={'Social Network'} text={'Lorem'} src={socialImg}/>
                     <Work title={'Timer'} text={'Lorem'} src={timerImg}/>
                 </FlexWrapper>
