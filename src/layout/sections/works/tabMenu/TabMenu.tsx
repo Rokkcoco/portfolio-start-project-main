@@ -2,14 +2,16 @@ import React from 'react';
 import styled from "styled-components";
 import {Link} from "../../../../components/Link";
 
-
-export const TabMenu = ({menuItems}: { menuItems: string[] }) => {
+export type TabMenuProps = {
+   tabsItems: {title: string , status: 'react' | 'spa' | 'landing' | 'all'}[]
+}
+export const TabMenu:React.FC<TabMenuProps> = ({tabsItems}) => {
     return (
         <StyledTabMenu>
             <ul>
-                {menuItems.map((t, i) => (
+                {tabsItems.map((t, i) => (
                     <ListItem key={i}>
-                        <Link href="">{t}</Link>
+                        <Link href="">{t.title}</Link>
                     </ListItem>)
                 )}
             </ul>

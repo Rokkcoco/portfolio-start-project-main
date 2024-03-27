@@ -1,32 +1,47 @@
-import React from 'react';
-import styled from "styled-components";
+import React, {useState} from 'react';
 import {SectionTitle} from "../../../components/SectionTitle";
-import {TabMenu} from "./tabMenu/TabMenu";
+import {TabMenu, TabMenuProps} from "./tabMenu/TabMenu";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {Work} from "./work/Work";
 import socialImg from '../../../assets/images/proj1.webp'
 import timerImg from '../../../assets/images/proj2.webp'
 import {Container} from '../../../components/Container';
+import {S} from './Works_Styles'
 
-const worksItems = ['All', 'Landing Page', 'React', 'SPA']
-export const Works = () => {
+
+const tabsItems: TabMenuProps['tabsItems'] = [
+    {title: 'All', status: "all"},
+    {title: 'landing page', status: "landing"},
+    {title: 'React', status: "react"},
+    {title: 'spa', status: "spa"},
+]
+
+const worksData = [
+    {title: 'Social Network', text: 'Lorem', image: socialImg, type: 'spa'},
+    {title: 'Timer', text: 'Lorem', image: timerImg, type: 'react'},
+]
+export const Works: React.FC = () => {
+    const [currentFilterStatus, setCurrentFilterStatus] = useState('all')
+
+    let filteredWorks = worksData
+
+    if (currentFilterStatus === 'landing') {
+        filteredWorks = worksData.filter(t => t.type === 'landing')
+    }
 
     return (
-        <StyledWorks>
+        <S.Works>
             <Container>
                 <SectionTitle>My Works</SectionTitle>
-                <TabMenu menuItems={worksItems}/>
-                <FlexWrapper justify={'space-between'} align={'flex-start'} wrap={'wrap'}> {/*flex-start чтобы убрать растягивание обоих элементов*/}
-                    <Work title={'Social Network'} text={'Lorem'} src={socialImg}/>
-                    <Work title={'Timer'} text={'Lorem'} src={timerImg}/>
+                <TabMenu tabsItems={tabsItems}/>
+                <FlexWrapper justify={'space-between'} align={'flex-start'}
+                             wrap={'wrap'}> {/*flex-start чтобы убрать растягивание обоих элементов*/}
+                    {filteredWorks.map(t => (
+                        <Work key={t.title} title={t.title} text={t.text} src={t.image}/>
+                    ))}
                 </FlexWrapper>
             </Container>
-        </StyledWorks>
+        </S.Works>
     );
 };
 
-const StyledWorks = styled.section`
-    ${FlexWrapper} {
-        gap: 30px;
-    }
-`
